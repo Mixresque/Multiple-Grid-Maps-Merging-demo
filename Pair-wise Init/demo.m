@@ -52,10 +52,10 @@ for demo_i = 1:demo_n-1                                           % Obtain all r
             
     end
     demo_tmp = size(Model);
-    map(demo_i, 1) = mat2cell(Model,demo_tmp(1),demo_tmp(2));                                               % Save maps No.1 ~ n-1
+    map(demo_i, 1) = mat2cell(Model',demo_tmp(2),demo_tmp(1));                                               % Save maps No.1 ~ n-1
 end
 demo_tmp = size(Data);
-map(demo_i+1, 1) = mat2cell(Data,demo_tmp(1),demo_tmp(2));
+map(demo_i+1, 1) = mat2cell(Data',demo_tmp(2),demo_tmp(1));
 draw_graph(topology,0);
 
 % Calculate global motions - demo

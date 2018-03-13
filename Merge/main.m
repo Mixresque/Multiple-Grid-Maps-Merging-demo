@@ -27,8 +27,8 @@ pM= initialise_M(N);    % initialise M from RotTran
 TrMin= 0.3;             %?2
 figure                  % create window
 obtain_shape(shape,pM);
-%plane(1,-20.1,-19.8)    % show a section of bunny
-plane(2,99.8,100.2)    %dragon
+% plane(1,-20.1,-19.8)    % show a section of bunny
+% plane(2,99.8,100.2)    %dragon
 
 iter= 0;    err= 10;
 ERROR= (N-1)*45*10^(-5);
