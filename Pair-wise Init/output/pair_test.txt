@@ -1,0 +1,220 @@
+Map 1 - Map 2
+Number of matches: 6 (unique: 4)
+1 matched 2 successfully
+
+Map 1 - Map 3
+Number of matches: 2 (unique: 1)
+1 matching 3 failed
+
+Map 1 - Map 4
+Number of matches: 1 (unique: 1)
+1 matching 4 failed
+
+Map 1 - Map 5
+Number of matches: 0 (unique: 0)
+1 matching 5 failed
+
+Map 1 - Map 6
+Number of matches: 0 (unique: 0)
+1 matching 6 failed
+
+Map 1 - Map 7
+Number of matches: 2 (unique: 2)
+1 matched 7 successfully
+
+Map 1 - Map 8
+Number of matches: 6 (unique: 5)
+1 matched 8 successfully
+
+Map 1 - Map 9
+Number of matches: 2 (unique: 2)
+1 matched 9 successfully
+
+Map 1 - Map 10
+Number of matches: 3 (unique: 2)
+1 matched 10 successfully
+
+Map 1 - Map 11
+Number of matches: 1 (unique: 1)
+1 matching 11 failed
+
+Map 2 - Map 3
+Number of matches: 6 (unique: 6)
+2 matched 3 successfully
+
+Map 2 - Map 4
+Number of matches: 3 (unique: 2)
+2 matched 4 successfully
+
+Map 2 - Map 5
+Number of matches: 0 (unique: 0)
+2 matching 5 failed
+
+Map 2 - Map 6
+Number of matches: 0 (unique: 0)
+2 matching 6 failed
+
+Map 2 - Map 7
+Number of matches: 0 (unique: 0)
+2 matching 7 failed
+
+Map 2 - Map 8
+Number of matches: 0 (unique: 0)
+2 matching 8 failed
+
+Map 2 - Map 9
+Number of matches: 0 (unique: 0)
+2 matching 9 failed
+
+Map 2 - Map 10
+Number of matches: 0 (unique: 0)
+2 matching 10 failed
+
+Map 2 - Map 11
+Number of matches: 0 (unique: 0)
+2 matching 11 failed
+
+Map 3 - Map 4
+Number of matches: 11 (unique: 10)
+3 matched 4 successfully
+
+Map 3 - Map 5
+Number of matches: 6 (unique: 6)
+3 matched 5 successfully
+
+Map 3 - Map 6
+Number of matches: 0 (unique: 0)
+3 matching 6 failed
+
+Map 3 - Map 7
+Number of matches: 7 (unique: 6)
+3 matched 7 successfully
+
+Map 3 - Map 8
+Number of matches: 2 (unique: 2)
+3 matched 8 successfully
+
+Map 3 - Map 9
+Number of matches: 2 (unique: 2)
+3 matched 9 successfully
+
+Map 3 - Map 10
+Number of matches: 4 (unique: 4)
+3 matched 10 successfully
+
+Map 3 - Map 11
+Number of matches: 2 (unique: 2)
+3 matched 11 successfully
+
+Map 4 - Map 5
+Number of matches: 14 (unique: 13)
+4 matched 5 successfully
+
+Map 4 - Map 6
+Number of matches: 2 (unique: 2)
+4 matched 6 successfully
+
+Map 4 - Map 7
+Number of matches: 10 (unique: 10)
+4 matched 7 successfully
+
+Map 4 - Map 8
+Number of matches: 1 (unique: 1)
+4 matching 8 failed
+
+Map 4 - Map 9
+Number of matches: 1 (unique: 1)
+4 matching 9 failed
+
+Map 4 - Map 10
+Number of matches: 2 (unique: 2)
+4 matched 10 successfully
+
+Map 4 - Map 11
+Number of matches: 1 (unique: 1)
+4 matching 11 failed
+
+Map 5 - Map 6
+Number of matches: 9 (unique: 7)
+5 matched 6 successfully
+
+Map 5 - Map 7
+Number of matches: 3 (unique: 3)
+5 matched 7 successfully
+
+Map 5 - Map 8
+Number of matches: 2 (unique: 2)
+5 matched 8 successfully
+
+Map 5 - Map 9
+Number of matches: 3 (unique: 3)
+5 matched 9 successfully
+
+Map 5 - Map 10
+Number of matches: 3 (unique: 3)
+5 matched 10 successfully
+
+Map 5 - Map 11
+Number of matches: 2 (unique: 2)
+5 matched 11 successfully
+
+Map 6 - Map 7
+Number of matches: 14 (unique: 12)
+6 matched 7 successfully
+
+Map 6 - Map 8
+Number of matches: 1 (unique: 1)
+6 matching 8 failed
+
+Map 6 - Map 9
+Number of matches: 1 (unique: 1)
+6 matching 9 failed
+
+Map 6 - Map 10
+Number of matches: 4 (unique: 4)
+6 matched 10 successfully
+
+Map 6 - Map 11
+Number of matches: 1 (unique: 1)
+6 matching 11 failed
+
+Map 7 - Map 8
+Number of matches: 20 (unique: 15)
+7 matched 8 successfully
+
+Map 7 - Map 9
+Number of matches: 1 (unique: 1)
+7 matching 9 failed
+
+Map 7 - Map 10
+Number of matches: 4 (unique: 4)
+7 matched 10 successfully
+
+Map 7 - Map 11
+Number of matches: 1 (unique: 1)
+7 matching 11 failed
+
+Map 8 - Map 9
+Number of matches: 13 (unique: 11)
+8 matched 9 successfully
+
+Map 8 - Map 10
+Number of matches: 8 (unique: 7)
+8 matched 10 successfully
+
+Map 8 - Map 11
+Number of matches: 2 (unique: 2)
+8 matched 11 successfully
+
+Map 9 - Map 10
+Number of matches: 9 (unique: 9)
+9 matched 10 successfully
+
+Map 9 - Map 11
+Number of matches: 1 (unique: 1)
+9 matching 11 failed
+
+Map 10 - Map 11
+Number of matches: 10 (unique: 9)
+10 matched 11 successfully
+
