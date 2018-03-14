@@ -5,7 +5,7 @@ global N MijAllE res
 [countE, ~] = size(LookTable);   % count edge
 
 for k=1:N
-   MijAllE(k,k).M = eye(4);
+   MijAllE(k,k).M = eye(3);
 end
 for k=1:countE  % create 
    i = LookTable(k,1);

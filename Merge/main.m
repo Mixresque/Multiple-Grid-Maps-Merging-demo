@@ -62,7 +62,7 @@ for iter1 = 1:2
        PMforR = GenPM(RMSTtable);                             % pM for RANSAC %PMforR = GenPMfromMA(RMSTtable,pM);
 
        restEdge = setdiff(LookTable,RMSTtable,'rows');
-       dRmax = 0.05;
+       dRmax = 0.07;
        dtmax = 1;
        [inlineNum, TrRAM] = RANSAC(PMforR, restEdge, RMSTAM); % Trimed RANSACed Adjacent Matrix % Inline Number
        if(inlineNum > iNumMax)
@@ -117,7 +117,7 @@ figure
 obtain_shape(shape,pM);
 %plane(1,-20.1,-19.8)   %Bunny
 %plane(2,149.8,150.2)
-plane(2,99.8,100.2)
+% plane(2,99.8,100.2)
 %plane(2,149.8,150.2,Model)
 %plane(1,-20.2,-19.8, Model)
 

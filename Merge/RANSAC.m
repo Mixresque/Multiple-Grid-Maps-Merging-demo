@@ -12,7 +12,8 @@ for k=1:count
     [R0,t0] = M2Rt(PMforR(i).M\PMforR(j).M);   % inv(PMforR(i).M)*PMforR(j).M
     dR = sum(sum(abs(R-R0)));
     dt = sum((t-t0).^2);
-    if((dR<dRmax) && (dt<dtmax))
+    % if((dR<dRmax) && (dt<dtmax))
+    if((dR<dRmax))
         inlineNum = inlineNum + 1;
         TrRAM(i,j) = 1;
         TrRAM(j,i) = 1;

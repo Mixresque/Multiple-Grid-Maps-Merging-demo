@@ -9,7 +9,7 @@ for i=1:N
   Data= Scan(:,1:res:end);
   KDtree{i,1}=  createns(Data'); 
   TData = transform_to_global(Scan, R0, t0);
-  plot3(TData(1,:),TData(2,:),TData(3,:),'.b');
+  plot(TData(1,:),TData(2,:),'.b');
   MShape=[MShape,TData];
   hold on
 end

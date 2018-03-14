@@ -46,15 +46,15 @@ M = Model(:,corr(:,1));
 mm = mean(M,2);
 S = Data(:,corr(:,2));
 ms = mean(S,2); 
-Sshifted = [S(1,:)-ms(1); S(2,:)-ms(2); S(3,:)-ms(3)];
-Mshifted = [M(1,:)-mm(1); M(2,:)-mm(2); M(3,:)-mm(3)];
+Sshifted = [S(1,:)-ms(1); S(2,:)-ms(2)];
+Mshifted = [M(1,:)-mm(1); M(2,:)-mm(2)];
 K = Sshifted*Mshifted';
 K = K/n;
 [U A V] = svd(K);
 R1 = V*U';
 if det(R1)<0
-    B = eye(3);
-    B(3,3) = det(V*U');
+    B = eye(2);
+    B(2,2) = det(V*U');
     R1 = V*B*U';
 end
 t1 = mm - R1*ms;

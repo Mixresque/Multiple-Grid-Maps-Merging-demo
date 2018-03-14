@@ -3,7 +3,7 @@ function PMforR = GenPM(RMSTtable)
 global N MijAllETmp
 RMSTtable = [RMSTtable; RMSTtable(:,2) RMSTtable(:,1)];
 jlist = iter(1,RMSTtable);
-PMforR(1).M= eye(4);
+PMforR(1).M= eye(3);
 for i=2:N
     PMforR(i).M = MijAllETmp(1,i).M;
 end
