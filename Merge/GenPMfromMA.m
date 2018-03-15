@@ -3,7 +3,7 @@ function PMforR = GenPMfromMA(RMSTtable,pM)
 global N MijAllE
 
 D1 = [];
-m = eye(3);
+m = eye(4);
 for k=1:N-1
    i = RMSTtable(k,1);
    j = RMSTtable(k,2);
