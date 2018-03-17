@@ -1,4 +1,4 @@
-function MergingMap= merging(MSource,DSource,R0,t0)
+function [MergingMap,t_offset]= merging(MSource,DSource,R0,t0)
 global Data
 
 % figure
@@ -15,6 +15,7 @@ cMin= ceil(min(NMs(2,:)));  cMax= ceil(max(NMs(2,:)));
 rN= (rMax-rMin)+2;          cN= (cMax-cMin)+2;
 MSource1(1:rN,1:cN)= MSource(1,1);
 MSource1((abs(rMin)+1):(abs(rMin)+rm),(abs(cMin)+1):(abs(cMin)+cm))= MSource;
+t_offset = [abs(rMin);abs(cMin)];
 MSource= [];    MSource= MSource1;
 R= inv(R0);
 for i= 1:1:rN

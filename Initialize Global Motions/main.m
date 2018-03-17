@@ -7,7 +7,7 @@ n = size(RelativeMotions,1);
 RotTran = zeros(3,n-1);
 
 %% Demo for test set
-for i = 2:n
+for i = 3:n
     RelativeMotions(1,i) = mat2cell(cell2mat(RelativeMotions(1,i-1))*cell2mat(RelativeMotions(i-1,i)),3,3);
 end
 

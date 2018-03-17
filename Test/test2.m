@@ -1,7 +1,6 @@
 %% Use relative motions i to i-1
 clear;
-
-n=11;
+n=3;
 load('RelativeMotions.mat');
 im1 = imread(join(['data\Fr',num2str(n),'.png'])); 
 MergeMap= rgb2gray(im1);
