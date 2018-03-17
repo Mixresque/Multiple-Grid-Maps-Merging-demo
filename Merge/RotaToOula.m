@@ -1,6 +1,7 @@
 function OulerAngle = RotaToOula(R)
 % 2D
-OulerAngle = atan(R(2,1)/R(1,1))+pi*(sign(R(2,1))-abs(sign(R(2,1))))/(-2);
+% OulerAngle = atan(R(2,1)/R(1,1))+pi*(sign(R(2,1))-abs(sign(R(2,1))))/(-2);
+OulerAngle = atan2(R(2,1),R(1,1));
 
 % 3D
 % threshold = 0.0001;
