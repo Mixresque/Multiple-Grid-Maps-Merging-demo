@@ -3,5 +3,9 @@
 *.key
 *.pgm
 *.mat
+<<<<<<< HEAD
 *.txt
+=======
+*.asv
+>>>>>>> new
 

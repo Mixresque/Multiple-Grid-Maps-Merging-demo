@@ -3,7 +3,9 @@
 % OulerAngle = [Rx, Ry Rz];
 function [R] = OulerToRota(OulerAngle)
 % 2D
-R = [cos(OulerAngle), -sin(OulerAngle); sin(OulerAngle), cos(OulerAngle)];
+R = [cos(OulerAngle) -sin(OulerAngle) 0
+     sin(OulerAngle) cos(OulerAngle) 0
+     0 0 1];
 
 % 3D
 % Rx = OulerAngle(1);    Ry = OulerAngle(2);     Rz = OulerAngle(3);

@@ -1,4 +1,4 @@
-function [R,t]= TrICP(MSource,DSource,R0,t0)
+function [R, t, MSE]= TrICP(MSource,DSource,R0,t0)
 
 global Model Data
 
@@ -19,6 +19,6 @@ Data= Data';
 Model= Model';
 
 % The TrICP algorithm
-[R, t, KSI, Phi] = FastTrICP(R0, t0,100);
+[R, t, KSI, MSE] = FastTrICP(R0, t0,100);
 
 

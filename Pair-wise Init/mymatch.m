@@ -48,9 +48,9 @@ end
 
 if show
     % Create a new image showing the two images side by side.
-    im3 = appendimages(image1, image2);
-
-    % Show a figure with lines joining the accepted matches.
+%     im3 = appendimages(image1, image2);
+% 
+%     % Show a figure with lines joining the accepted matches.
 %    figure('Position', [100 100 size(im3,2) size(im3,1)], 'Name', join(['Map ',num2str(demo_i),' - Map',num2str(demo_j)]));
 %    colormap('gray');
 %    imagesc(im3);
@@ -62,7 +62,7 @@ if show
 %             [loc1(i,1) loc2(matchidxs(i),1)], 'Color', 'b');
 %      end
 %    end
-%hold off;
+% hold off;
 end
 num = sum(matchidxs > 0);
 fprintf('Found %d matches.\n', num);
