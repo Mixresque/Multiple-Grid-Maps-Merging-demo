@@ -14,7 +14,7 @@ RelativeMotions = cell(demo_n, demo_n);
 MSE = zeros(demo_n, demo_n);
 map = cell(demo_n, 2);
 % for demo_i = 1:demo_n
-%     RelativeMotions(demo_i, demo_i) = mat2cell(eye(3), 3, 3);
+%     RelativeMotions{demo_i, demo_i} = eye(3);
 % end
 
 Maps = ('output/Maps.mat');
@@ -39,23 +39,20 @@ for demo_i = 1:demo_n-1                                           % Obtain all r
         Mmap= rgb2gray(im1);
         Dmap= rgb2gray(im2);
         [R, t, MSE(demo_i, demo_j)]= TrICP(Mmap,Dmap,R0,t0);       
-        RelativeMotions(demo_i, demo_j) = mat2cell([R,t;0,0,1], 3, 3);                              % Applying the TrICP algorithm 
+        RelativeMotions{demo_i, demo_j} = [R,t;0,0,1];                              % Applying the TrICP algorithm 
         
         topology(demo_i, demo_j) = 1;
             
     end
-    demo_tmp = size(Model);
     m_tmp = Model';
     m_tmp(:,3) = 0;
-    map(demo_i, 1) = mat2cell(m_tmp,demo_tmp(2),demo_tmp(1)+1);                                               % Save maps No.1 ~ n-1
+    map{demo_i, 1} = m_tmp;                                               % Save maps No.1 ~ n-1
 end
-demo_tmp = size(Data);
 m_tmp = Data';
 m_tmp(:,3) = 0;
-map(demo_n, 1) = mat2cell(m_tmp,demo_tmp(2),demo_tmp(1)+1);
+map{demo_n, 1} = m_tmp;
 draw_graph(topology,0);
 
-RelativeMotions(1,1) = mat2cell(eye(3), 3, 3);
 save(PairwiseResults, 'RelativeMotions','MSE');                                 % Save relative motions and trimmed mse
 save(Maps, 'map');                                                         % Save maps
 fclose(fmsg);
