@@ -7,22 +7,37 @@ RotTranM = ('Output/RotTranM.mat');
 rm = ('Output/RelativeMotions.mat');
 n = size(RelativeMotions,1);
 RotTran = zeros(3,n-1);
-iter_MCS = 1;
-thr_MCS = 10;
-edges = find(~cellfun(@isempty,RelativeMotions));
+iter_MCS = 121;
+thr_MCS = 1000;
+i = eye(3);
 
 % Sample minimal connected graphs and confirm reliability of relative motions
 support_best = 0;
 mglobal_best = zeros(1,n);
 for i = 1:iter_MCS
+    edges = find(~cellfun(@isempty,RelativeMotions));
     sub = sampleSubgraph(RelativeMotions, MSE);
     mglobal = mrelative2mglobal(RelativeMotions, sub);
-    
-    
-    
-%     if(support >= support_best)
-%         mglobal_best = mglobal;
-%     end
+    support = 10;
+    sedge = size(edges,1);
+    drift = zeros(sedge,1);
+    for j = 1:sedge
+        fs = ceil(edges(j)/n);
+        fe = edges(j) - fs*n+n;
+        drift(j) = norm( RelativeMotions{fe,fs}\(mglobal{fs}/mglobal{fe}) - i, 'fro');
+        if (drift(j) < thr_MCS)
+            support = support + 1;
+        end
+    end
+    if(support >= support_best)
+        mglobal_best = mglobal;
+        for j = 1:sedge
+            if (drift(j) >= thr_MCS)
+                RelativeMotions{j} = [];
+                MSE(j) = 0;
+            end
+        end
+    end
 end
 
 %% Demo for test set

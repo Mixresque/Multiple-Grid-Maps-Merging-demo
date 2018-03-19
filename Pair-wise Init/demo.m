@@ -27,7 +27,7 @@ for demo_i = 1:demo_n-1                                           % Obtain all r
         
         im2 = imread(join(['data\Fr',num2str(demo_j),'.png'])); 
 
-        [pts1 pts2] = SIFTmatch( im1, im2, 0, true );                      % Obtain the feature matches
+        [pts1, pts2] = SIFTmatch( im1, im2, 0, true );                      % Obtain the feature matches
         try
             [R0,t0, best_ptsA] = ransac(pts1, pts2, 'rig_lsq', 2);             % Estimate the initial merging parameters by the consistent feature matches
         catch

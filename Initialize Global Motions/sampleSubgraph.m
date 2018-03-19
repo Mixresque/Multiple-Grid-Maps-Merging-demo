@@ -7,12 +7,15 @@
 
 function A = sampleSubgraph(initial_graph, weight)
     n = size(initial_graph,1);
+    
     % Get all existing edges and respective weights
     edge_exist = ~cellfun(@isempty,initial_graph);
     tmp = find(edge_exist);
+    
     % edge = [tmp-ceil(tmp/n)*n+n,ceil(tmp/n),1./MSE(tmp)];
     edge = [tmp,1./weight(tmp)];
     g = zeros(n);
+    
     % Graph-based random sampling
     while (~isequal(g~=0,ones(n)))
         A = zeros(n);
@@ -30,4 +33,6 @@ function A = sampleSubgraph(initial_graph, weight)
         g = A+A'+eye(n);        % Calculate reachability matrix
         g = g^n;
     end
-    showSubgraph(A,edge_exist);
+    
+%     showSubgraph(A,edge_exist);
+    
