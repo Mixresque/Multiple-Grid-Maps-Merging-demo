@@ -1,12 +1,16 @@
 % sampleAndConfirm  Sample minimal connected graphs and confirm
 %                   reliability of relative motions. 
+% support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best)  
+% Variable iter_MCS sets the number of iterations, thr_MCS the threshold
+% for judging reliability, and support_best the least supporting edges
+% a good MCS should get. Return the number of supporting edges for the
+% best MCS found. 
 
-function  sampleAndConfirm(iter_MCS, thr_MCS, support_best)    
-global RelativeMotions MSE mglobal_best mcs_best n
-    mglobal_best = cell(1,n);
-    mcs_best = zeros(n);
+function support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best)    
+global RelativeMotions MSE mglobal_best mcs_best n reliableRM
     for i = 1:iter_MCS
-        edges = find(~cellfun(@isempty,RelativeMotions));
+        reliableRM = ~cellfun(@isempty,RelativeMotions);
+        edges = find(reliableRM);
         sub = sampleSubgraph(RelativeMotions, MSE);
         mglobal = mrelative2mglobal(RelativeMotions, sub);
         mcs = find(sub);
@@ -15,7 +19,7 @@ global RelativeMotions MSE mglobal_best mcs_best n
         svoter = size(voters,1);
         support = 0;
         drift = zeros(svoter,1);
-    %     disp(num2str(i));
+        disp(num2str(i));
         for j = 1:svoter
             fs = ceil(voters(j)/n);          % j
             fe = voters(j) - fs*n+n;         % i
@@ -24,12 +28,13 @@ global RelativeMotions MSE mglobal_best mcs_best n
             if (drift(j) < thr_MCS)
                 support = support + 1;
             end
-    %         disp (join([num2str(fe),' ',num2str(fs), ' ',num2str(drift(j))]))
+            disp (join([num2str(fe),' ',num2str(fs), ' ',num2str(drift(j))]))
         end
 
-        if(support > support_best)
+        if(support >= support_best)
             mglobal_best = mglobal;
             mcs_best = sub;
+            support_best = support;
             for j = 1:svoter
                 if (drift(j) >= thr_MCS)
                     fs = ceil(voters(j)/n);          % j

@@ -10,3 +10,5 @@ random.shuffle(a);
 
 for i in range(n):
     copyfile(src+str(a[i])+suffix, dst+str(i+1)+suffix);
+
+print(a);
