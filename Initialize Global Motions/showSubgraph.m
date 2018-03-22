@@ -1,6 +1,7 @@
 function showSubgraph(rel,initial)  
 %由邻接矩阵画图  
 %输入为邻接矩阵，必须为方阵；  
+figure
 if nargin<2
     initial = rel;
 end
