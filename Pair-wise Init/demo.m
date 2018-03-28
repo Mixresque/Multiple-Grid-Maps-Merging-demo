@@ -18,14 +18,14 @@ map = cell(demo_n, 2);
 % end
 
 Maps = ('output/Maps.mat');
-PairwiseResults = ('output/mPairwiseResults.mat');
+PairwiseResults = ('output/PairwiseResults.mat');
 fmsg=fopen('output/pair_test.txt','w+');
 for demo_i = 1:demo_n-1                                           % Obtain all relative motions
-    im1 = imread(join(['datam\Fr',num2str(demo_i),'.png']));
+    im1 = imread(join(['data\Fr',num2str(demo_i),'.png']));
     for demo_j = demo_i+1:demo_n
         fprintf(fmsg,'Map %d - Map %d\r\n', demo_i, demo_j);
         
-        im2 = imread(join(['datam\Fr',num2str(demo_j),'.png'])); 
+        im2 = imread(join(['data\Fr',num2str(demo_j),'.png'])); 
 
         [pts1, pts2] = SIFTmatch( im1, im2, 0, true );                      % Obtain the feature matches
         try

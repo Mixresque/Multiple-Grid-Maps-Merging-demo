@@ -5,7 +5,7 @@ close all;
 
 global RelativeMotions MSE mglobal_best mcs_best n reliableRM
 
-load('Input/xPairwiseResults.mat');
+load('Input/PairwiseResults.mat');
 RotTranM = ('Output/RotTranM.mat');
 rm = ('Output/RelativeMotions.mat');
 n = size(RelativeMotions,1);
@@ -13,12 +13,12 @@ RotTran = zeros(3,n-1);
 mglobal_best = cell(1,n);
 mcs_best = zeros(n);
 
-% % Original dataset: 
-% iter_MCS = 2*n*n;
-% thr_MCS = 100;
-% support_best = 4;
-% support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best);
-% showSubgraph(mcs_best,reliableRM)
+% Original dataset: 
+iter_MCS = n*n;
+thr_MCS = 100;
+support_best = 0;
+support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best);
+showSubgraph(mcs_best,reliableRM)
 
 
 % % Iteration set 1. 
@@ -27,11 +27,11 @@ mcs_best = zeros(n);
 % support_best = 0;
 % support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best);
 
-% Iteration set 2. 
-iter_MCS = n*n;
-thr_MCS = 200;
-support_best = 0;
-support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best);
+% % Iteration set 2. 
+% iter_MCS = n*n;
+% thr_MCS = 200;
+% support_best = 0;
+% support_best = sampleAndConfirm(iter_MCS, thr_MCS, support_best);
 
 %% Demo for test set
 % for i = 3:n
