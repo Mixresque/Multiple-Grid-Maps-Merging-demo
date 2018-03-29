@@ -1,6 +1,6 @@
 %% Use global motions
 
-src = 'data';
+src = 'datax';
 n=11;
 im1 = imread(join([src,'\Fr1.png']));
 MergeMap= rgb2gray(im1);

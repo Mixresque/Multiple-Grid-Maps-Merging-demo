@@ -17,13 +17,14 @@ function globalMotions = mrelative2mglobal(RelativeMotions, adjac)
 %%
 function [visited,globalMotions] = visitPoint(x,adjac,visited,globalMotions,RelativeMotions)
     que = find(adjac(x,:)==1);
+%     disp(join(['visiting ',num2str(x)]))
     for i = 1:size(que,2)
         if visited(que(i))==1
             continue;
         end
         if (que(i)<=x)
             tmp_rm = RelativeMotions{que(i),x};
-            globalMotions{1,que(i)} = globalMotions{1,x}*tmp_rm;
+            globalMotions{1,que(i)} = globalMotions{1,x}/tmp_rm;
 %             disp(join(['M',num2str(que(i)),' = M',num2str(x),' * M ',num2str(que(i)),' ',num2str(x)]))
         else
             tmp_rm = RelativeMotions{x,que(i)};
