@@ -27,10 +27,10 @@ function support_best = sampleAndConfirm(iter_MCS, thr_r, thr_t, support_best)
             fs = ceil(voters(j)/n);          % j
             fe = voters(j) - fs*n+n;         % i
     %         disp (join([num2str(fs),' ',num2str(fe),' ',num2str(edges(j))]))
-            [R, t] = Motion2Rt(mglobal{fe}\mglobal{fs});
-            [R0, t0] = Motion2Rt(RelativeMotions{fe,fs});
-%             drift_r(j) = norm(R-R0);
-            drift_r(j) = sum(sum(abs(R-R0)));
+            [R, t] = motion2Rt(mglobal{fe}\mglobal{fs});
+            [R0, t0] = motion2Rt(RelativeMotions{fe,fs});
+            drift_r(j) = norm(R-R0);
+%             drift_r(j) = sum(sum(abs(R-R0)));
             drift_t(j) = norm(t-t0);
             if (drift_r(j) <= thr_r && drift_t(j) <= thr_t)
                 support = support + 1;
