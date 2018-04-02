@@ -24,7 +24,7 @@ function gm = motionAverage(gm, rmreliability, rm)
     end
     d = pinv(d);
     epsilon = 10^(-4);
-    max = 100;
+    max = 200;
     diff = 10;
     i = 0;
     while ( diff>epsilon && i<max )
@@ -39,8 +39,10 @@ function gm = motionAverage(gm, rmreliability, rm)
         delta = d*dV;
         for j = 2:n
             dvi = delta(3*j-2:3*j,1);
-            dmi = [1, dvi(1), dvi(2); -dvi(1), 1, dvi(3); 0, 0, 1];
+            dmi = [0, dvi(1), dvi(2); -dvi(1), 0, dvi(3); 0, 0, 0];
             gm{j} = expm(dmi)*gm{j};            
         end   
         diff = norm(delta);
+        disp(i)
+        disp(diff)
     end

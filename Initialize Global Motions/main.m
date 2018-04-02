@@ -5,7 +5,7 @@ close all;
 global RelativeMotions MSE mglobal_best mcs_best n reliableRM
 
 %% Get initial global motions for merging
-load('Input/2PairwiseResults.mat');
+load('Input/PairwiseResults.mat');
 RotTranM = ('Output/RotTranM.mat');
 rm = ('Output/RelativeMotions.mat');
 n = size(RelativeMotions,1);
@@ -20,10 +20,14 @@ thr_t = 16;
 support_best = 0;
 support_best = sampleAndConfirm(iter_MCS, thr_r, thr_t, support_best);
 showSubgraph(mcs_best,reliableRM)
+load('Input\tmp.mat')
+src = 'data\Fr';
+img_out = 'Output\coarse.png';
 test3
 
 %% Perform motion average algorithm
 mglobal_best = motionAverage(mglobal_best, reliableRM, RelativeMotions);
+img_out = 'Output\fine.png';
 test3
 
 % % Save global motions with map 1 as reference frame

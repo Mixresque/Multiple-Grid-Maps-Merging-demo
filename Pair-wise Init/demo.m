@@ -4,7 +4,7 @@ close all
 global TrMin TrMax Model Data demo_i demo_j fmsg
 TrMin= 0.2; 
 TrMax= 1.0;
-demo_n = 8;                                            % Number of maps to be merged
+demo_n = 11;                                            % Number of maps to be merged
 tic
 
 topology = zeros(demo_n, demo_n);
@@ -16,17 +16,17 @@ map = cell(demo_n, 2);
 % for demo_i = 1:demo_n
 %     RelativeMotions{demo_i, demo_i} = eye(3);
 % end
-
-Maps = ('output/2Maps.mat');
-PairwiseResults = ('output/2PairwiseResults.mat');
-fmsg=fopen('output/2pair_test.txt','w+');
+src='data\Fr';
+Maps = ('output/Maps.mat');
+PairwiseResults = ('output/PairwiseResults.mat');
+fmsg=fopen('output/pair_test.txt','w+');
 data_tmp = ('output/tmp.mat');
 for demo_i = 1:demo_n-1                                           % Obtain all relative motions
-    im1 = imread(join(['data2\In',num2str(demo_i),'.png']));
+    im1 = imread(join([src,num2str(demo_i),'.png']));
     for demo_j = demo_i+1:demo_n
         fprintf(fmsg,'Map %d - Map %d\r\n', demo_i, demo_j);
         
-        im2 = imread(join(['data2\In',num2str(demo_j),'.png'])); 
+        im2 = imread(join([src,num2str(demo_j),'.png'])); 
 
         [pts1, pts2] = SIFTmatch( im1, im2, 0, true );                      % Obtain the feature matches
         try
