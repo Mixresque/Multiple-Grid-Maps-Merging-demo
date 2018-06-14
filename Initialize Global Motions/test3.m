@@ -1,5 +1,5 @@
 %% Use global motions
-
+% src = 'data\Fr';
 im1 = imread(join([src,'1.png']));
 MergeMap= rgb2gray(im1);
 n = size(mglobal_best, 2);

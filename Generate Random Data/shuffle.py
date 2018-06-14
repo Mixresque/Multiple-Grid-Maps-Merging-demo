@@ -1,9 +1,9 @@
 import random
 from shutil import copyfile
 
-n = 11;
-src = 'data/Fr';
-dst = 'datax/Fr';
+n = 7;
+src = 'data/In';
+dst = 'datax/In';
 suffix = '.png';
 a = list(range(1,n+1));
 random.shuffle(a);

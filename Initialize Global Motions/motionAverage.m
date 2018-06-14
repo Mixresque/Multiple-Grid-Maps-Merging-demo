@@ -7,7 +7,7 @@
 % reliable relative motions, rm is all the available relative 
 % motions. Return gm as the final fine global motions. 
 
-function gm = motionAverage(gm, rmreliability, rm)
+function [gm, xxx, yyy] = motionAverage(gm, rmreliability, rm)
     rrms = find(rmreliability);
     n = size(rmreliability, 1);
     n_edge = size(rrms, 1);
@@ -27,6 +27,8 @@ function gm = motionAverage(gm, rmreliability, rm)
     max = 200;
     diff = 10;
     i = 0;
+    xxx=[];
+    yyy=[];
     while ( diff>epsilon && i<max )
         i = i+1;
         dV = [];
@@ -43,6 +45,8 @@ function gm = motionAverage(gm, rmreliability, rm)
             gm{j} = expm(dmi)*gm{j};            
         end   
         diff = norm(delta);
-        disp(i)
-        disp(diff)
+        xxx = [xxx,delta];
+        yyy = [yyy,diff];
+%         disp(i)
+%         disp(diff)
     end
